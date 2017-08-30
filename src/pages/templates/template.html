@@ -1,0 +1,62 @@
+<!--
+  Generated template for the Page3Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <div class="item-note" item-left>
+        <ion-icon name={{properties.icon}}></ion-icon> {{properties.title}}
+      </div>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="itemTapped($event, item)">
+        <ion-icon name="information-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-item text-wrap color="salmon">
+    <div class ="bar bar-subheader">
+      <h5><ion-icon name="home"></ion-icon> Marschallstr. 1a - 13585 Berlin <ion-icon name="call"></ion-icon> 030/3751421</h5>
+    </div>
+  </ion-item>
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+      pullingIcon="arrow-dropdown"
+      pullingText="Zum Aktualisieren nach unten ziehen..."
+      refreshingSpinner="circles"
+      refreshingText="Aktualisieren...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-item text-wrap ion-item *ngFor="let pageitem of pageitems">
+    <ion-list>
+      <ion-item text-wrap ion-item color="plascon_pink">
+        <h1><ion-icon name={{pageitem.icon}}></ion-icon> <b>{{pageitem.category}}</b></h1>
+        <h4>{{pageitem.info}}</h4>
+      </ion-item>
+      <ion-item text-wrap ion-item *ngFor="let item of pageitem.list">
+        <div class="item-note" item-left>
+          {{item.number}}
+        </div>
+        <div class="item-note">
+          <p><span style="color: #f53d3d">{{item.name}}</span><sup>{{item.information}}</sup></p>
+          <p text-wrap><i>{{item.ingredients}}</i></p>
+        </div>
+        <div class="item-note" item-right>
+          {{item.price.toFixed(2)}}€
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-item>
+  <ion-item text-wrap ><p><span style="color:#f53d3d">Allergene</span>: <span style="color:#f53d3d">A</span> enthält glutenhaltige Getreide (Weizen, Roggen, Gerste, Hefer, Dinkel usw) <span style="color:#f53d3d">B</span> enthält Krebstiere oder Krebstiererzeignisse, <span style="color:#f53d3d">C</span> enthält Eier oder Eiererzeignisse, <span style="color:#f53d3d">D</span> enthält Fisch oder Fischerzeignisse, <span style="color:#f53d3d">E</span> enthält Erdnüsse oder Erdnüsserzeignisse, <span style="color:#f53d3d">F</span> enthält Soja oder Sojaerzeugnisse, <span style="color:#f53d3d">G</span> enhält Milch oder Milcherzeugnisse ( Laktose), <span style="color:#f53d3d">H</span> enthält Schalenfrüchte oder deren Erzeugnisse ( Mandel, Haselnuss, Walnuss, Chashewnuss, Pecanuss, Paranuss, Pistazie, Macadamianuss, Queenslandnuss), <span style="color:#f53d3d">I</span> enthält sellerie oder Sellerieerzeugnisse, <span style="color:#f53d3d">J</span> enthält Senf oder Senferzeignisse, <span style="color:#f53d3d">K</span> enthält Sesamsamen oder Sesamsamenerzeugnisse, <span style="color:#f53d3d">M</span> enthält Lupine oder erzeugnisse daraus, <span style="color:#f53d3d">N</span> Weichtiere (Molusken) oder Erzeugnisse <span style="color:#f53d3d">1</span> Sorbinsäure, <span style="color:#f53d3d">2</span> mit Farbstoff, <span style="color:#f53d3d">3</span> mit Konservierungsstoff, <span style="color:#f53d3d">4</span> mit Süßungsmittel, <span style="color:#f53d3d">5</span> mit Geschmacksverstärker, <span style="color:#f53d3d">6</span> geschwärzt, <span style="color:#f53d3d">7</span> Antioxidationsmittel, <span style="color:#f53d3d">8</span> koffeinhaltig, <span style="color:#f53d3d">9</span> mit Farbstoff Beta-Carotin, <span style="color:#f53d3d">10</span> fein zerkleinertes Fleisch, <span style="color:#f53d3d">11</span> Form-fleischforderschinken,aus Vorderschinkenteilen zusammengefügt, mit Antioxydationsmittel, <span style="color:#f53d3d">12</span> mit enthält Schwefeldioxid und Sulfite</p></ion-item>
+</ion-content>

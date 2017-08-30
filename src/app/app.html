@@ -1,15 +1,44 @@
 <ion-menu [content]="content">
   <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
+    <ion-toolbar color="danger">
+      <ion-title>
+      <div class="item-note" item-left><ion-icon name="ios-navigate"></ion-icon> Menü</div>
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+      <button text-wrap menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <div class="item-note" item-left><ion-icon name={{p.icon}}></ion-icon></div>
+        <div class="item-note">{{p.title}}</div>
       </button>
+      <ion-item text-wrap color="danger"><h2><ion-icon name="information-circle"></ion-icon> Informationen</h2></ion-item>
+      <ion-item text-wrap>
+        <div class="item-note" item-left><ion-icon name="call"></ion-icon></div>
+        <div>
+          <p>Strasse: Marschallstr. 1a</p>
+          <p>Ort: 13585 Berlin</p>
+          <p>Tel.: 030/3751421</p>
+        </div>
+      </ion-item>
+      <ion-item text-wrap>
+        <div class="item-note" item-left><ion-icon name="clock"></ion-icon></div>
+        <div>
+          <p>Lieferzeiten</p>
+          <p>So.-Fr. von 12<sup>00</sup> bis 22<sup>00</sup> Uhr</p>
+          <p>Sa. RUHETAG ausser Feiertagen</p>
+          <p>Feiertage 12<sup>00</sup> bis 22<sup>00</sup> Uhr</p>
+        </div>
+      </ion-item>
+      <ion-item text-wrap>
+        <div class="item-note" item-left><ion-icon name="car"></ion-icon></div>
+        <div>
+          <p>Lieferservice frei Haus ab 8,- €</p>
+          <p><i>nach Staaken ab 12,- € Bestellwert</i></p>
+          <p>Ab 35,- E Bestellwert erhalten Sie eine Flasche Pflaumenwein (0,5 l) !</p>
+        </div>
+      </ion-item>
     </ion-list>
   </ion-content>
 

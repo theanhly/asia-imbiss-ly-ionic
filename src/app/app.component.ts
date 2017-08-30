@@ -4,7 +4,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { Page1Page } from '../pages/page1/page1';
+import { Page2Page } from '../pages/page2/page2';
+import { Page3Page } from '../pages/page3/page3';
+import { Page4Page } from '../pages/page4/page4';
+import { Page5Page } from '../pages/page5/page5';
+import { Page6Page } from '../pages/page6/page6';
 
 @Component({
   templateUrl: 'app.html'
@@ -14,15 +19,20 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{icon:string, title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { icon: 'home', title: 'Gesamte Speisekarte', component: HomePage },
+      { icon: 'ios-restaurant', title: 'Suppen, Vorspeisen & Salate', component: Page1Page },
+      { icon: 'ios-restaurant', title: 'Nudelgerichte, Reisgerichte, Reisnudelgerichte, Vegetarische Gerichte', component: Page2Page },
+      { icon: 'ios-restaurant', title: 'Schweinefleisch-Gerichte, Rindfleisch-Gerichte, Hühnerfleisch-Gerichte, Entenfleischgerichte', component: Page3Page },
+      { icon: 'ios-restaurant', title: 'Fischgerichte, Großgarnelen‑Gerichte, Tintenfisch‑Gerichte', component: Page4Page },
+      { icon: 'ios-restaurant', title: 'Spezialitäten des Hauses, Asia-Spezialgerichte', component: Page5Page },
+      { icon: 'beer', title: 'Deserts, Getränke', component: Page6Page },
     ];
 
   }

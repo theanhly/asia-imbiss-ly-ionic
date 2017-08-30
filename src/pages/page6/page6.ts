@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { MenuList } from '../templates/menulist';
+import { InformationPage } from '../information/information';
 
 /**
  * Generated class for the Page6Page page.
@@ -51,6 +52,13 @@ export class Page6Page {
     });
 
     alert.present();
+  }
+
+  itemTapped(event, item) {
+    // That's right, we're pushing to ourselves!
+    this.navCtrl.push(InformationPage, {
+      item: item
+    });
   }
 
 }

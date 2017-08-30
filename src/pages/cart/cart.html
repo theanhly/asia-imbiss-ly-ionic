@@ -18,7 +18,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content>
       pullingIcon="arrow-dropdown"
@@ -36,9 +36,15 @@
         <p><span style="color: #f53d3d">{{item.name}}</span>
       </div>
       <div class="item-note" item-right>
-        {{item.price.toFixed(2)}}€
-        <button (click)="removeItem(i)">
-          <ion-icon icon-only name="close-circle"></ion-icon>
+        <button default ion-button icon-end color="danger" (click)="removeItem(i)">
+          {{item.price.toFixed(2)}}€ <ion-icon name="close-circle"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+    <ion-item text-wrap *ngIf="cartController.cartItems.length > 1">
+      <div class="item-note" item-right>
+        <button default ion-button icon-end color="danger" (click)="removeAllItems()">
+          Alle Einträge löschen <ion-icon name="close-circle"></ion-icon>
         </button>
       </div>
     </ion-item>
@@ -46,7 +52,7 @@
       <div class="item-note" item-left>
         Gesamt
       </div>
-      <div class="item-note" item-right ng-init="costs=getCartCost().toFixed(2)">
+      <div class="item-note" item-right>
         {{getCartCost().toFixed(2)}}€
         <ion-icon icon-only name="pricetag"></ion-icon>
       </div>

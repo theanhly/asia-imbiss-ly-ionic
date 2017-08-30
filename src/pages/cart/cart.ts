@@ -32,6 +32,10 @@ export class CartPage {
     }, 2000);
   }
 
+  removeAllItems() {
+    this.cartController.removeAllItemsFromCart();
+  }
+
   removeItem(index) {
     this.cartController.removeItemFromCart(index);
   }

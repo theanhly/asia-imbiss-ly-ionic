@@ -15,4 +15,8 @@ export class CartController {
     public removeItemFromCart(index) {
         this.cartItems.splice(index, 1);
     }
-}
+
+    public removeAllItemsFromCart() {
+        this.cartItems = [];
+    }
+ }

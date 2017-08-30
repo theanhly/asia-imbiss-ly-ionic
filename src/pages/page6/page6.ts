@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { MenuList } from '../templates/menulist';
 import { InformationPage } from '../information/information';
+import { CartPage } from '../cart/cart';
+import { CartController } from '../common/cartController';
 
 /**
  * Generated class for the Page6Page page.
@@ -21,7 +23,7 @@ export class Page6Page {
   properties: {icon: string, title: string};
   pageitems: Array<{icon: string, category: string, info:string, list: any}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public cartController: CartController) {
     this.properties = { icon: "beer", title: "Desserts, Getränke" };
 
     this.pageitems = [];
@@ -61,4 +63,14 @@ export class Page6Page {
     });
   }
 
+  cartIconTapped(event, item) {
+    // That's right, we're pushing to ourselves!
+    this.navCtrl.push(CartPage, {
+      item: item
+    });
+  }
+  
+  addItemToCart(event, item) {
+    this.cartController.addCartItem(item);
+  }
 }

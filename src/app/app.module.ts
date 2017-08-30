@@ -12,6 +12,8 @@ import { Page4Page } from '../pages/page4/page4';
 import { Page5Page } from '../pages/page5/page5';
 import { Page6Page } from '../pages/page6/page6';
 import { InformationPage } from '../pages/information/information';
+import { CartPage } from '../pages/cart/cart';
+import { CartController } from '../pages/common/cartController';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,6 +30,7 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
     Page5Page,
     Page6Page,
     InformationPage,
+    CartPage,
     ListPage
   ],
   imports: [
@@ -45,6 +48,7 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
     Page5Page,
     Page6Page,
     InformationPage,
+    CartPage,
     ListPage
   ],
   providers: [
@@ -52,7 +56,8 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     FirebaseProvider,
-    FirebaseProvider
+    FirebaseProvider,
+    CartController
   ]
 })
 export class AppModule {}

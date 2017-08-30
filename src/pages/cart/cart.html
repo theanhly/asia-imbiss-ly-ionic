@@ -1,0 +1,60 @@
+<!--
+  Generated template for the CartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <div class="item-note" item-left>
+        <ion-icon name="cart"></ion-icon> Einkaufswagen
+      </div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+      pullingIcon="arrow-dropdown"
+      pullingText="Zum Aktualisieren nach unten ziehen..."
+      refreshingSpinner="circles"
+      refreshingText="Aktualisieren...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item text-wrap ion-item *ngFor="let item of cartController.cartItems; let i = index">
+      <div class="item-note" item-left>
+        {{item.number}}
+      </div>
+      <div class="item-note">
+        <p><span style="color: #f53d3d">{{item.name}}</span>
+      </div>
+      <div class="item-note" item-right>
+        {{item.price.toFixed(2)}}€
+        <button (click)="removeItem(i)">
+          <ion-icon icon-only name="close-circle"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+    <ion-item text-wrap>
+      <div class="item-note" item-left>
+        Gesamt
+      </div>
+      <div class="item-note" item-right ng-init="costs=getCartCost().toFixed(2)">
+        {{getCartCost().toFixed(2)}}€
+        <ion-icon icon-only name="pricetag"></ion-icon>
+      </div>
+    </ion-item>
+    <ion-item text-wrap>
+      <div class="item-note" item-right>
+        Mindestbestellwert: 8€ (12€ nach Staaken)
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -19,6 +19,9 @@
       <button ion-button icon-only (click)="itemTapped($event, item)">
         <ion-icon name="information-circle"></ion-icon>
       </button>
+      <button ion-button icon-only (click)="cartIconTapped($event, item)">
+        <ion-icon name="cart"></ion-icon>
+      </button>
     </ion-buttons>
   </ion-navbar>
   <ion-item text-wrap color="salmon">
@@ -54,6 +57,9 @@
         </div>
         <div class="item-note" item-right>
           {{item.price.toFixed(2)}}€
+          <button (click)="addItemToCart($event, item)">
+            <ion-icon icon-only name="cart"></ion-icon>
+          </button>
         </div>
       </ion-item>
     </ion-list>

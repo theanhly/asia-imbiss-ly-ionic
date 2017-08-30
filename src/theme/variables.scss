@@ -15,6 +15,21 @@ $app-direction: ltr;
 @import "ionic.globals";
 
 
+#cart-btn {
+  position: relative;
+  width: 42px;
+  top:1px;
+  right: 1px;
+  overflow: visible!important;
+}
+
+#cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  border-radius: 100%;
+}
+
 // Shared Variables
 // --------------------------------------------------
 // To customize the look and feel of this app, you can override

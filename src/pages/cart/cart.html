@@ -57,12 +57,19 @@
         <ion-icon icon-only name="pricetag"></ion-icon>
       </div>
     </ion-item>
-    <ion-item text-wrap>
+    <ion-item text-wrap color="dark_green" *ngIf="getCartCost() >= 8">
       <div class="item-note" item-right><ion-icon name="call"></ion-icon></div>
       <div class="item-note" item-right>
-        <p>Mindestbestellwert: 8€ (12€ nach Staaken)</p>
+        <p>Mindestbestellwert von mindestens 8€ erreicht.</p>
+        <p><i>Mindestbestellwert nach Staaken beträgt 12€!</i></p>
         <p>Rufen Sie uns an, um zu bestellen!</p>
         <p>Tel.: 030/3751421</p>
+      </div>
+    </ion-item>
+    <ion-item text-wrap color="danger" *ngIf="getCartCost() < 8">
+      <div class="item-note" item-right><ion-icon name="information-circle"></ion-icon></div>
+      <div class="item-note" item-right>
+        <p>Mindestbestellwert von mindestens 8€ (12€ nach Staaken) nicht erreicht.</p>
       </div>
     </ion-item>
   </ion-list>

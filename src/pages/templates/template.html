@@ -42,7 +42,7 @@
       refreshingText="Aktualisieren...">
     </ion-refresher-content>
   </ion-refresher>
-  <ion-item text-wrap ion-item *ngFor="let pageitem of pageitems">
+  <div text-wrap *ngFor="let pageitem of pageitems">
     <ion-list>
       <ion-item text-wrap ion-item color="plascon_pink">
         <h1><ion-icon name={{pageitem.icon}}></ion-icon> <b>{{pageitem.category}}</b></h1>
@@ -63,6 +63,6 @@
         </div>
       </ion-item>
     </ion-list>
-  </ion-item>
+  </div>
   <ion-item text-wrap ><p><span style="color:#f53d3d">Allergene</span>: <span style="color:#f53d3d">A</span> enthält glutenhaltige Getreide (Weizen, Roggen, Gerste, Hefer, Dinkel usw) <span style="color:#f53d3d">B</span> enthält Krebstiere oder Krebstiererzeignisse, <span style="color:#f53d3d">C</span> enthält Eier oder Eiererzeignisse, <span style="color:#f53d3d">D</span> enthält Fisch oder Fischerzeignisse, <span style="color:#f53d3d">E</span> enthält Erdnüsse oder Erdnüsserzeignisse, <span style="color:#f53d3d">F</span> enthält Soja oder Sojaerzeugnisse, <span style="color:#f53d3d">G</span> enhält Milch oder Milcherzeugnisse ( Laktose), <span style="color:#f53d3d">H</span> enthält Schalenfrüchte oder deren Erzeugnisse ( Mandel, Haselnuss, Walnuss, Chashewnuss, Pecanuss, Paranuss, Pistazie, Macadamianuss, Queenslandnuss), <span style="color:#f53d3d">I</span> enthält sellerie oder Sellerieerzeugnisse, <span style="color:#f53d3d">J</span> enthält Senf oder Senferzeignisse, <span style="color:#f53d3d">K</span> enthält Sesamsamen oder Sesamsamenerzeugnisse, <span style="color:#f53d3d">M</span> enthält Lupine oder erzeugnisse daraus, <span style="color:#f53d3d">N</span> Weichtiere (Molusken) oder Erzeugnisse <span style="color:#f53d3d">1</span> Sorbinsäure, <span style="color:#f53d3d">2</span> mit Farbstoff, <span style="color:#f53d3d">3</span> mit Konservierungsstoff, <span style="color:#f53d3d">4</span> mit Süßungsmittel, <span style="color:#f53d3d">5</span> mit Geschmacksverstärker, <span style="color:#f53d3d">6</span> geschwärzt, <span style="color:#f53d3d">7</span> Antioxidationsmittel, <span style="color:#f53d3d">8</span> koffeinhaltig, <span style="color:#f53d3d">9</span> mit Farbstoff Beta-Carotin, <span style="color:#f53d3d">10</span> fein zerkleinertes Fleisch, <span style="color:#f53d3d">11</span> Form-fleischforderschinken,aus Vorderschinkenteilen zusammengefügt, mit Antioxydationsmittel, <span style="color:#f53d3d">12</span> mit enthält Schwefeldioxid und Sulfite</p></ion-item>
 </ion-content>

@@ -37,7 +37,7 @@
       </div>
       <div class="item-note" item-right>
         <button default ion-button icon-end color="danger" (click)="removeItem(i)">
-          {{item.price.toFixed(2)}}€ <ion-icon name="close-circle"></ion-icon>
+          {{item.price | currency:'EUR':true:'1.2-2'}} <ion-icon name="close-circle"></ion-icon>
         </button>
       </div>
     </ion-item>
@@ -50,11 +50,10 @@
     </ion-item>
     <ion-item text-wrap color="dark">
       <div class="item-note" item-left>
-        Gesamt
+        <ion-icon icon-only name="pricetag"></ion-icon> Gesamt
       </div>
       <div class="item-note" item-right>
-        {{getCartCost().toFixed(2)}}€
-        <ion-icon icon-only name="pricetag"></ion-icon>
+        {{getCartCost() | currency:'EUR':true:'1.2-2'}}
       </div>
     </ion-item>
     <ion-item text-wrap color="dark_green" *ngIf="getCartCost() >= 8">

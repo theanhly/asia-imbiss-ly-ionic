@@ -14,6 +14,7 @@ import { Page6Page } from '../pages/page6/page6';
 import { InformationPage } from '../pages/information/information';
 import { CartPage } from '../pages/cart/cart';
 import { CartController } from '../pages/common/cartController';
+import { LOCALE_ID } from '@angular/core';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -57,7 +58,8 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     FirebaseProvider,
     FirebaseProvider,
-    CartController
+    CartController,
+    { provide: LOCALE_ID, useValue: 'de-DE' },
   ]
 })
 export class AppModule {}

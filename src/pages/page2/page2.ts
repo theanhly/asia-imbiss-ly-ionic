@@ -4,6 +4,7 @@ import { AlertController } from 'ionic-angular';
 import { MenuList } from '../templates/menulist';
 import { InformationPage } from '../information/information';
 import { CartPage } from '../cart/cart';
+import { MapPage } from '../map/map';
 import { CartController } from '../common/cartController';
 
 /**
@@ -63,6 +64,11 @@ export class Page2Page {
     this.navCtrl.push(InformationPage, {
       item: item
     });
+  }
+
+  mapTapped() {
+    // That's right, we're pushing to ourselves!
+    this.navCtrl.push(MapPage);
   }
 
   cartIconTapped(event, item) {

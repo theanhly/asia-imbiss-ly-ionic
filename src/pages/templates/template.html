@@ -25,11 +25,6 @@
       </button>
     </ion-buttons>
   </ion-navbar>
-  <ion-item text-wrap color="salmon">
-    <div class ="bar bar-subheader">
-      <h5><ion-icon name="home"></ion-icon> Marschallstr. 1a - 13585 Berlin <ion-icon name="call"></ion-icon> 030/3751421</h5>
-    </div>
-  </ion-item>
 </ion-header>
 
 
@@ -44,7 +39,7 @@
   </ion-refresher>
   <div text-wrap *ngFor="let pageitem of pageitems">
     <ion-list>
-      <ion-item text-wrap ion-item color="plascon_pink">
+      <ion-item text-wrap ion-item color="salmon">
         <h1><ion-icon name={{pageitem.icon}}></ion-icon> <b>{{pageitem.category}}</b></h1>
         <h4>{{pageitem.info}}</h4>
       </ion-item>

@@ -10,6 +10,7 @@ import { Page3Page } from '../pages/page3/page3';
 import { Page4Page } from '../pages/page4/page4';
 import { Page5Page } from '../pages/page5/page5';
 import { Page6Page } from '../pages/page6/page6';
+import { CartPage } from '../pages/cart/cart';
 
 @Component({
   templateUrl: 'app.html'
@@ -18,6 +19,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
+  cartPage: any = CartPage;
 
   pages: Array<{icon:string, title: string, component: any}>;
 

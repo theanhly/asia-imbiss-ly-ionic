@@ -13,6 +13,7 @@ import { Page5Page } from '../pages/page5/page5';
 import { Page6Page } from '../pages/page6/page6';
 import { InformationPage } from '../pages/information/information';
 import { CartPage } from '../pages/cart/cart';
+import { MapPage } from '../pages/map/map';
 import { CartController } from '../pages/common/cartController';
 import { LOCALE_ID } from '@angular/core';
 
@@ -32,6 +33,7 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
     Page6Page,
     InformationPage,
     CartPage,
+    MapPage,
     ListPage
   ],
   imports: [
@@ -50,6 +52,7 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
     Page6Page,
     InformationPage,
     CartPage,
+    MapPage,
     ListPage
   ],
   providers: [
